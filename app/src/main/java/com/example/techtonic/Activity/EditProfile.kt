@@ -351,10 +351,11 @@ class EditProfile : AppCompatActivity() {
                 if (task.isSuccessful) {
                     ProfileimageUri?.let { uploadImageToFirebase(it) }
                     clearFields()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, Profile())
-                        .addToBackStack(null)
-                        .commit()
+                    finish()
+                    // supportFragmentManager.beginTransaction()
+                    //     .replace(R.id.fragment_container, Profile())
+                    //     .addToBackStack(null)
+                    //     .commit()
                 } else {
                     Toast.makeText(this, "Error Editing Profile", Toast.LENGTH_SHORT).show()
                 }
