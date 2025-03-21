@@ -134,26 +134,26 @@ class SignUp : AppCompatActivity() {
                 ).show()
             }
         }
-        sendVerificationEmail(email)
+        // sendVerificationEmail(email)
 
     }
 
-    private fun sendVerificationEmail(email: String) {
-        // Generate a random 6-digit OTP
-        generatedOTP = (100000..999999).random()
+    // private fun sendVerificationEmail(email: String) {
+    //     // Generate a random 6-digit OTP
+    //     generatedOTP = (100000..999999).random()
 
-        // Send email using SendMail
-        val mail = SendMail(
-            email,                     // Recipient's email
-            "Email Verification Code",
-            "Your verification code is: $generatedOTP"
-        )
-        mail.execute()
+    //     // Send email using SendMail
+    //     val mail = SendMail(
+    //         email,                     // Recipient's email
+    //         "Email Verification Code",
+    //         "Your verification code is: $generatedOTP"
+    //     )
+    //     mail.execute()
 
-        // Show a message and move to OTP verification screen
-        Toast.makeText(this, "Verification code sent to $email", Toast.LENGTH_LONG).show()
+    //     // Show a message and move to OTP verification screen
+    //     Toast.makeText(this, "Verification code sent to $email", Toast.LENGTH_LONG).show()
 
-    }
+    // }
 
     private fun saveUserData(firstName: String,lastName:String,email: String, phonenumber: String) {
         val userId = auth.currentUser?.uid
